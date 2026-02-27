@@ -36,6 +36,23 @@ The application allows users to register, log in, create blog posts, manage cont
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Homepage
+![Homepage](images/homepage.png)
+
+---
+
+### 🔐 Login Page
+![Login Page](images/login.png)
+
+---
+
+### 📝 Admin Dashboard
+![Admin Dashboard](images/admin-dashboard.png)
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -46,6 +63,9 @@ Blogging-Website/
 ├── css/
 ├── js/
 ├── images/
+│   ├── homepage.png
+│   ├── login.png
+│   └── admin-dashboard.png
 ├── database/
 ├── partials/
 ├── index.php
@@ -67,19 +87,11 @@ cd Blogging-Website
 
 ### 2️⃣ Setup PostgreSQL Database
 
-Create a new database:
-
 ```sql
 CREATE DATABASE blog_db;
 ```
 
-Create required tables (Example Schema Below).
-
----
-
 ### 3️⃣ Configure Database Connection
-
-Update your database configuration file inside `/config/`:
 
 ```php
 <?php
@@ -90,13 +102,11 @@ if(!$conn){
 ?>
 ```
 
----
-
 ### 4️⃣ Run the Project
 
-- Place the project folder inside your server directory (XAMPP/WAMP/Laragon).
-- Start Apache and PostgreSQL.
-- Open in browser:
+- Place inside XAMPP/WAMP/Laragon `htdocs` folder
+- Start Apache & PostgreSQL
+- Open:
 
 ```
 http://localhost/Blogging-Website
@@ -104,76 +114,20 @@ http://localhost/Blogging-Website
 
 ---
 
-## 🗄️ Database Schema (Example)
-
-```sql
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    firstname VARCHAR(50) NOT NULL,
-    lastname VARCHAR(50) NOT NULL,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    is_admin BOOLEAN DEFAULT FALSE
-);
-
-CREATE TABLE categories (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    description TEXT
-);
-
-CREATE TABLE posts (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    body TEXT NOT NULL,
-    author_id INT REFERENCES users(id) ON DELETE CASCADE,
-    category_id INT REFERENCES categories(id) ON DELETE SET NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
----
-
-## 📸 Screenshots
-
-### 🏠 Homepage
-_Add homepage screenshot here_
-
-### 🔐 Login Page
-_Add login page screenshot here_
-
-### 📝 Admin Dashboard
-_Add dashboard screenshot here_
-
----
-
 ## 📈 Project Highlights
 
-- Implemented Full CRUD operations using PHP  
-- Designed relational database using PostgreSQL  
-- Developed modular backend structure  
-- Applied responsive UI principles  
-- Secured authentication using sessions & validation  
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository  
-2. Create a new branch  
-3. Commit your changes  
-4. Push to your branch  
-5. Open a Pull Request  
+- Implemented Full CRUD operations using PHP
+- Designed relational database using PostgreSQL
+- Developed modular backend structure
+- Applied responsive UI principles
+- Secured authentication using sessions & validation
 
 ---
 
 ## 📜 License
 
-This project is open-source and available under the MIT License.
+This project is open-source under the MIT License.
 
 ---
 
-⭐ If you like this project, consider giving it a star on GitHub!
+⭐ If you like this project, consider giving it a star!
